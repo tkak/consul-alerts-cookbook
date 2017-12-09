@@ -1,4 +1,4 @@
-name 'consul-alerts-cookbook'
+name 'consul-alerts'
 maintainer 'Takaaki Furukawa'
 maintainer_email 'takaaki.frkw@gmail.com'
 license 'All Rights Reserved'
@@ -7,15 +7,8 @@ long_description 'Installs/Configures consul-alerts-cookbook'
 version '0.1.0'
 chef_version '>= 12.1' if respond_to?(:chef_version)
 
-# The `issues_url` points to the location where issues for this cookbook are
-# tracked.  A `View Issues` link will be displayed on this cookbook's page when
-# uploaded to a Supermarket.
-#
-# issues_url 'https://github.com/<insert_org_here>/consul-alerts-cookbook/issues'
+supports 'ubuntu', '>= 16.04'
+supports 'centos', '>= 7.0'
 
-# The `source_url` points to the development repository for this cookbook.  A
-# `View Source` link will be displayed on this cookbook's page when uploaded to
-# a Supermarket.
-#
-# source_url 'https://github.com/<insert_org_here>/consul-alerts-cookbook'
-
+issues_url 'https://github.com/tkak/consul-alerts-cookbook/issues'
+source_url 'https://github.com/tkak/consul-alerts-cookbook'
