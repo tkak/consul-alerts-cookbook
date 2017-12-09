@@ -1,0 +1,9 @@
+default['consul_alerts']['version'] = '0.5.0'
+default['consul_alerts']['service_name'] = 'consul-alerts'
+default['consul_alerts']['service_user'] = 'consul-alerts'
+default['consul_alerts']['service_group'] = 'consul-alerts'
+default['consul_alerts']['create_service_user'] = true
+default['consul_alerts']['alert_address'] = '127.0.0.1:9000'
+default['consul_alerts']['consul_address'] = '127.0.0.1:8500'
+default['consul_alerts']['datacenter'] = 'dc1'
+default['consul_alerts']['acl_token'] = ''
