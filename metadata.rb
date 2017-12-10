@@ -5,7 +5,7 @@ license 'All Rights Reserved'
 description 'Installs/Configures consul-alerts-cookbook'
 long_description 'Installs/Configures consul-alerts-cookbook'
 version '0.1.0'
-chef_version '>= 12.1' if respond_to?(:chef_version)
+chef_version '>= 12.5' if respond_to?(:chef_version)
 
 supports 'ubuntu', '>= 16.04'
 supports 'centos', '>= 7.0'

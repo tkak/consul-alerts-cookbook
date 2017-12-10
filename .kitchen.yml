@@ -20,7 +20,7 @@ suites:
   - name: default
     run_list:
       - recipe[consul_server]
-      - recipe[consul-alerts-cookbook::default]
+      - recipe[consul-alerts::default]
     verifier:
       inspec_tests:
         - test/smoke/default
