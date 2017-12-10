@@ -94,7 +94,7 @@ action_class do
         'User' => new_resource.user,
         'Group' => new_resource.group,
         'Restart' => 'on-failure',
-        'ExecStart' => "#{new_resource.program} start --alert-addr=#{new_resource.alert_address} --consul-addr=#{new_resource.consul_address} --consul-dc=#{new_resource.datacenter} --consul-acl-token='#{new_resource.acl_token}'",
+        'ExecStart' => "#{new_resource.program} start --watch-events --watch-checks --alert-addr=#{new_resource.alert_address} --consul-addr=#{new_resource.consul_address} --consul-dc=#{new_resource.datacenter} --consul-acl-token='#{new_resource.acl_token}'",
         'ExecReload' => '/bin/kill -HUP $MAINPID',
         'KillSignal' => 'SIGINT',
       },
