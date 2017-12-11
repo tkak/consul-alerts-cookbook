@@ -4,7 +4,7 @@ maintainer_email 'takaaki.frkw@gmail.com'
 license 'All Rights Reserved'
 description 'Installs/Configures consul-alerts-cookbook'
 long_description 'Installs/Configures consul-alerts-cookbook'
-version '0.1.1'
+version '0.1.2'
 chef_version '>= 12.5' if respond_to?(:chef_version)
 
 supports 'ubuntu', '>= 16.04'

@@ -6,6 +6,7 @@ property :alert_address, String, default: lazy { node['consul_alerts']['alert_ad
 property :consul_address, String, default: lazy { node['consul_alerts']['consul_address'] }
 property :datacenter, String, default: lazy { node['consul_alerts']['datacenter'] }
 property :acl_token, String, default: lazy { node['consul_alerts']['acl_token'] }
+property :log_level, String, default: lazy { node['consul_alerts']['log_level'] }
 property :program, String, default: '/usr/local/bin/consul-alerts'
 
 action :start do
@@ -91,10 +92,8 @@ action_class do
         'After' => 'network.target',
       },
       'Service' => {
-        'User' => new_resource.user,
-        'Group' => new_resource.group,
         'Restart' => 'on-failure',
-        'ExecStart' => "#{new_resource.program} start --watch-events --watch-checks --alert-addr=#{new_resource.alert_address} --consul-addr=#{new_resource.consul_address} --consul-dc=#{new_resource.datacenter} --consul-acl-token='#{new_resource.acl_token}'",
+        'ExecStart' => "#{new_resource.program} start --watch-events --watch-checks --alert-addr=#{new_resource.alert_address} --consul-addr=#{new_resource.consul_address} --consul-dc=#{new_resource.datacenter} --consul-acl-token='#{new_resource.acl_token}' --log-level=#{new_resource.log_level}",
         'ExecReload' => '/bin/kill -HUP $MAINPID',
         'KillSignal' => 'SIGINT',
       },
